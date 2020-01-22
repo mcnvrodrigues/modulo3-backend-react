@@ -1,7 +1,10 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 app.get('/countries', (request, response) => {
   const countries = axios.get(
@@ -33,6 +36,6 @@ app.get('/countries/:countryCode', (request, response) => {
    });
 });
 
-app.listen(3000, () => {
-  console.log('APP rodando em http://localhost:3000');
+app.listen(4000, () => {
+  console.log('APP rodando em http://localhost:4000');
 })
